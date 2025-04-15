@@ -1,21 +1,21 @@
 {
   "name": "music-composition-website",
   "version": "1.0.0",
-  "description": "",
+  "description": "Personal website for music compositions",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Murat Gulcelik",
   "license": "ISC",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^4.2.4"
+    "web-vitals": "^2.1.4"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",

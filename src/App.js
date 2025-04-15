@@ -134,7 +134,7 @@ function App() {
               </div>
               <div className="space-y-2">
                 <h3 className="text-2xl font-light group-hover:text-gray-600 transition-colors">048 — Vacant</h3>
-                <p className="text-sm uppercase tracking-wider text-gray-500">Ambient Composition, 2025</p>
+                <p className="text-sm uppercase tracking-wider text-gray-500">Electronic / Ambient Composition, 2025</p>
               </div>
             </div>
 
