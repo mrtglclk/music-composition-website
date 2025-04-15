@@ -1,28 +1,28 @@
 {
   "name": "music-composition-website",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    // Standard Create React App scripts
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "react-scripts build"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    // Ensure you're on a compatible version of react-scripts (CRA 5 works well with Tailwind)
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4",
-
-    // Tailwind / PostCSS
-    "tailwindcss": "^3.3.2",
+    "web-vitals": "^4.2.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
     "postcss": "^8.4.21",
-    "autoprefixer": "^10.4.14"
+    "tailwindcss": "^3.3.2"
   },
   "browserslist": {
-    // Standard config for CRA + Tailwind
     "production": [
       ">0.2%",
       "not dead",

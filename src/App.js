@@ -1,28 +1,45 @@
 // src/App.js
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 function App() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Handle scroll effect for navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="bg-black text-white min-h-screen flex flex-col font-sans">
-      {/* Sticky Navigation Bar */}
-      <header className="sticky top-0 z-50 bg-neutral-900 shadow-md">
-        <nav className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+    <div className="bg-black text-white min-h-screen flex flex-col font-sans tracking-wide">
+      {/* Sticky Navigation Bar with transition effect */}
+      <header 
+        className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+          isScrolled ? "bg-black shadow-lg py-3" : "bg-transparent py-6"
+        }`}
+      >
+        <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo / Name */}
-          <div className="text-2xl font-bold tracking-wide">
-            Murat Gulcelik
+          <div className="text-2xl font-light tracking-widest">
+            MURAT GULCELIK
           </div>
           {/* Nav Links */}
-          <div className="space-x-6 text-sm font-medium">
-            <a href="#home" className="hover:text-gray-300 transition-colors">
+          <div className="space-x-10 text-sm font-light tracking-wider uppercase">
+            <a href="#home" className="hover:text-gray-300 transition-all duration-300 border-b border-transparent hover:border-white pb-1">
               Home
             </a>
-            <a href="#works" className="hover:text-gray-300 transition-colors">
+            <a href="#works" className="hover:text-gray-300 transition-all duration-300 border-b border-transparent hover:border-white pb-1">
               Works
             </a>
-            <a
-              href="#contact"
-              className="hover:text-gray-300 transition-colors"
-            >
+            <a href="#contact" className="hover:text-gray-300 transition-all duration-300 border-b border-transparent hover:border-white pb-1">
               Contact
             </a>
           </div>
@@ -30,101 +47,130 @@ function App() {
       </header>
 
       {/* Page Content */}
-      <main className="flex-grow">
-        {/* HOME Section */}
-        <section
-          id="home"
-          className="max-w-6xl mx-auto px-4 py-12 space-y-8"
-        >
-          <h1 className="text-4xl font-bold tracking-tight">Welcome</h1>
-          <p className="text-neutral-300 leading-relaxed max-w-2xl">
-            <strong>Murat Gulcelik</strong> (b. 2003) is a Turkish-American
-            composer exploring digital silence, acoustic textures, and slow
-            ambient forms. Influenced by phenomenology and improvisation, his
-            music merges minimalist soundscapes with bold expressive gestures.
-            Recent works bridge music, code, and dance, reflecting a fascination
-            with the subtle interplay of space and sound.
-          </p>
-          <div>
-            <img
-              src="/IMG_7565.JPEG"
-              alt="Murat Gulcelik portrait"
-              className="w-full max-w-md rounded shadow-lg object-cover grayscale hover:grayscale-0 transition duration-500 ease-in-out"
-            />
+      <main className="flex-grow pt-24">
+        {/* HERO Section */}
+        <section id="home" className="min-h-screen flex items-center">
+          <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <h4 className="text-sm uppercase tracking-widest text-gray-400">Composer & Sound Artist</h4>
+              <h1 className="text-5xl md:text-6xl font-light tracking-tight leading-tight"></h1>
+              <div className="w-16 h-1 bg-white"></div>
+              <p className="text-gray-300 leading-relaxed text-lg">
+  <span className="font-medium">Murat Gulcelik</span> (b. 2003) is a Turkish-American
+  composer exploring a vast array of musical genres. He has experience with various
+  different instruments, primarily playing the upright and electric bass currently around NYC.
+  He has composed works for film, theater, ballet, chamber ensembles, sound art and more. 
+  Currently, he is focusing on ambient forms and minimalist soundscapes. Recent works bridge 
+  music, code, modular sounds, and reflect a fascination with the subtle interplay of space and sound.
+</p>
+            </div>
+            <div className="h-full relative">
+              <div className="absolute -top-10 -left-10 w-32 h-32 border-t border-l border-white opacity-20"></div>
+              <img
+                src="/IMG_7565.JPEG"
+                alt="Murat Gulcelik portrait"
+                className="w-full h-full object-cover grayscale contrast-125 shadow-2xl"
+              />
+              <div className="absolute -bottom-10 -right-10 w-32 h-32 border-b border-r border-white opacity-20"></div>
+            </div>
           </div>
         </section>
 
         {/* WORKS Section */}
         <section
           id="works"
-          className="max-w-6xl mx-auto px-4 py-12 space-y-8 border-t border-neutral-800"
+          className="py-32 relative"
         >
-          <h2 className="text-3xl font-bold tracking-tight">Works</h2>
-          <p className="text-neutral-400 max-w-2xl">
-            A selection of pieces spanning ambient, electronic, jazz, and
-            chamber music. More coming soon.
-          </p>
-          {/* Track #1 */}
-          <div className="space-y-3">
-            <h3 className="text-xl font-semibold">048 - Clarity</h3>
-            <iframe
-              width="100%"
-              height="166"
-              scrolling="no"
-              frameBorder="no"
-              allow="autoplay"
-              title="SoundCloud Embed - Clarity"
-              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/murat-guelcelik/048-clarity&color=%23111111&auto_play=false&show_user=true"
-              className="rounded-lg shadow-md"
-            ></iframe>
-          </div>
-          {/* Track #2 */}
-          <div className="space-y-3">
-            <h3 className="text-xl font-semibold">Another Track</h3>
-            <iframe
-              width="100%"
-              height="166"
-              scrolling="no"
-              frameBorder="no"
-              allow="autoplay"
-              title="SoundCloud Embed - Another Track"
-              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1629814017&color=%23111111&auto_play=false&show_user=true"
-              className="rounded-lg shadow-md"
-            ></iframe>
+          <div className="absolute top-0 right-0 w-1/3 h-1 bg-gradient-to-r from-transparent to-white opacity-20"></div>
+          <div className="max-w-7xl mx-auto px-6 space-y-16">
+            <div className="space-y-4">
+              <h4 className="text-sm uppercase tracking-widest text-gray-400">Portfolio</h4>
+              <h2 className="text-4xl font-light tracking-tight">Selected Works</h2>
+              <p className="text-gray-300 max-w-xl text-lg">
+                A curated selection of compositions spanning ambient, electronic, jazz, and
+                chamber music explorations.
+              </p>
+            </div>
+            
+            {/* Tracks Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {/* Track #1 */}
+              <div className="space-y-6 group">
+                <div className="overflow-hidden">
+                  <div className="relative pb-[60%] bg-neutral-900 transition-transform duration-500 group-hover:scale-[0.98]">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      scrolling="no"
+                      frameBorder="no"
+                      allow="autoplay"
+                      title="SoundCloud Embed - Clarity"
+                      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/murat-guelcelik/048-clarity&color=%23111111&auto_play=false&show_user=true"
+                      className="absolute inset-0 rounded-none shadow-xl"
+                    ></iframe>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-2xl font-light group-hover:text-gray-300 transition-colors">048 — Clarity</h3>
+                  <p className="text-sm uppercase tracking-wider text-gray-500">Ambient Composition, 2025</p>
+                </div>
+              </div>
+              
+  
+
+
+
+            </div>
           </div>
         </section>
 
         {/* CONTACT Section */}
         <section
           id="contact"
-          className="max-w-6xl mx-auto px-4 py-12 space-y-8 border-t border-neutral-800"
+          className="py-32"
         >
-          <h2 className="text-3xl font-bold tracking-tight">Contact</h2>
-          <p className="text-neutral-300 max-w-2xl">
-            Let’s connect! Feel free to email me or follow my Instagram.
-          </p>
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-            <a
-              href="mailto:muratgulcelik@gmail.com"
-              className="inline-block bg-white text-black py-2 px-4 rounded hover:bg-gray-200 transition-colors"
-            >
-              Email Me
-            </a>
-            <a
-              href="https://instagram.com/muratgulcelik"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:text-gray-400 transition-colors"
-            >
-              @muratgulcelik
-            </a>
+          <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div className="space-y-8">
+              <h4 className="text-sm uppercase tracking-widest text-gray-400">Get In Touch</h4>
+              <h2 className="text-4xl font-light tracking-tight">Let's Connect</h2>
+              <div className="w-16 h-1 bg-white"></div>
+              <p className="text-gray-300 leading-relaxed text-lg max-w-xl">
+                For collaborations, questions, and more.
+              </p>
+              <div className="flex flex-col sm:flex-row items-start gap-6">
+                <a
+                  href="mailto:muratgulcelik@gmail.com"
+                  className="inline-block border border-white py-3 px-8 hover:bg-white hover:text-black transition-all duration-300 tracking-wider uppercase text-sm"
+                >
+                  Email Me
+                </a>
+                <a
+                  href="https://instagram.com/muratgulcelik"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block py-3 hover:text-gray-400 transition-all duration-300 tracking-wider uppercase text-sm border-b border-transparent hover:border-white"
+                >
+                  @muratgulcelik
+                </a>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+           
+            </div>
           </div>
         </section>
       </main>
 
       {/* Footer */}
-      <footer className="bg-neutral-900 py-4 text-center text-sm text-neutral-500">
-        <p>&copy; {new Date().getFullYear()} Murat Gulcelik</p>
+      <footer className="border-t border-neutral-900 py-12">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="text-sm tracking-widest uppercase font-light">
+            Murat Gulcelik
+          </div>
+          <div className="text-xs text-neutral-600">
+            &copy; {new Date().getFullYear()} · All Rights Reserved
+          </div>
+        </div>
       </footer>
     </div>
   );
