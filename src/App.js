@@ -95,9 +95,9 @@ function App() {
             {/* Tracks Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {/* Track #1 */}
-              <div className="space-y-6 group">
+              <div className="space-y-4 group">
                 <div className="overflow-hidden">
-                  <div className="relative pb-[60%] bg-neutral-900 transition-transform duration-500 group-hover:scale-[0.98]">
+                  <div className="relative pb-[20%] bg-black transition-transform duration-500 group-hover:scale-[0.98]">
                     <iframe
                       width="100%"
                       height="100%"
@@ -105,18 +105,38 @@ function App() {
                       frameBorder="no"
                       allow="autoplay"
                       title="SoundCloud Embed - Clarity"
-                      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/murat-guelcelik/048-clarity&color=%23111111&auto_play=false&show_user=true"
-                      className="absolute inset-0 rounded-none shadow-xl"
+                      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/murat-guelcelik/048-clarity&color=%23000000&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false"
+                      className="absolute inset-0 rounded-none shadow-xl bg-black"
                     ></iframe>
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-2xl font-light group-hover:text-gray-300 transition-colors">048 — Clarity</h3>
+                  <h3 className="text-2xl font-light group-hover:text-gray-600 transition-colors">047 — Clarity</h3>
                   <p className="text-sm uppercase tracking-wider text-gray-500">Ambient Composition, 2025</p>
                 </div>
               </div>
               
-  
+            {/* Track #2 */}
+            <div className="space-y-4 group">
+              <div className="overflow-hidden">
+                <div className="relative pb-[20%] bg-black transition-transform duration-500 group-hover:scale-[0.98]">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    scrolling="no"
+                    frameBorder="no"
+                    allow="autoplay"
+                    title="SoundCloud Embed - Vacant"
+                    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/murat-guelcelik/048-vacant&color=%23000000&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false"
+                    className="absolute inset-0 rounded-none shadow-xl bg-black"
+                  ></iframe>
+                </div>
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-2xl font-light group-hover:text-gray-600 transition-colors">048 — Vacant</h3>
+                <p className="text-sm uppercase tracking-wider text-gray-500">Ambient Composition, 2025</p>
+              </div>
+            </div>
 
 
 
