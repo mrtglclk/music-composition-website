@@ -61,7 +61,7 @@ function App() {
   different instruments, primarily playing the upright and electric bass currently around NYC.
   He has composed works for film, theater, ballet, chamber ensembles, sound art and more. 
   Currently, he is focusing on ambient forms and minimalist soundscapes. Recent works bridge 
-  music, code, modular sounds, and reflect a fascination with the subtle interplay of space and sound.
+  music, code, dance, and modular sounds.
 </p>
             </div>
             <div className="h-full relative">
@@ -69,7 +69,7 @@ function App() {
               <img
                 src="/IMG_7565.JPEG"
                 alt="Murat Gulcelik portrait"
-                className="w-full h-full object-cover grayscale contrast-125 shadow-2xl"
+                className="w-full h-full object-cover contrast-125 shadow-2xl"
               />
               <div className="absolute -bottom-10 -right-10 w-32 h-32 border-b border-r border-white opacity-20"></div>
             </div>
@@ -83,13 +83,14 @@ function App() {
         >
           <div className="absolute top-0 right-0 w-1/3 h-1 bg-gradient-to-r from-transparent to-white opacity-20"></div>
           <div className="max-w-7xl mx-auto px-6 space-y-16">
-            <div className="space-y-4">
+            <div className="space-y-4">s
               <h4 className="text-sm uppercase tracking-widest text-gray-400">Portfolio</h4>
               <h2 className="text-4xl font-light tracking-tight">Selected Works</h2>
               <p className="text-gray-300 max-w-xl text-lg">
                 A curated selection of compositions spanning ambient, electronic, jazz, and
                 chamber music explorations.
               </p>
+              <p> MORE TO BE ADDED VERY SOON ... </p>
             </div>
             
             {/* Tracks Grid */}
@@ -115,28 +116,6 @@ function App() {
                   <p className="text-sm uppercase tracking-wider text-gray-500">Ambient Composition, 2025</p>
                 </div>
               </div>
-              
-            {/* Track #2 */}
-            <div className="space-y-4 group">
-              <div className="overflow-hidden">
-                <div className="relative pb-[20%] bg-black transition-transform duration-500 group-hover:scale-[0.98]">
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    scrolling="no"
-                    frameBorder="no"
-                    allow="autoplay"
-                    title="SoundCloud Embed - Vacant"
-                    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/murat-guelcelik/048-vacant&color=%23000000&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false"
-                    className="absolute inset-0 rounded-none shadow-xl bg-black"
-                  ></iframe>
-                </div>
-              </div>
-              <div className="space-y-2">
-                <h3 className="text-2xl font-light group-hover:text-gray-600 transition-colors">048 — Vacant</h3>
-                <p className="text-sm uppercase tracking-wider text-gray-500">Electronic / Ambient Composition, 2025</p>
-              </div>
-            </div>
 
 
 
@@ -174,9 +153,16 @@ function App() {
                 </a>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="absolute -top-10 -left-10 w-32 h-32 border-t border-l border-white opacity-20"></div>
+            <img
+                src="/bass_end.jpeg"
+                alt="Bass portrait"
+                className="w-full h-full object-cover contrast-125 shadow-2xl"
+              />
            
-            </div>
+            <div className="absolute -bottom-10 -right-10 w-32 h-32 border-b border-r border-white opacity-20"></div>
+           
+            
           </div>
         </section>
       </main>
