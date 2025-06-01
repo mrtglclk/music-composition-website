@@ -83,14 +83,14 @@ function App() {
         >
           <div className="absolute top-0 right-0 w-1/3 h-1 bg-gradient-to-r from-transparent to-white opacity-20"></div>
           <div className="max-w-7xl mx-auto px-6 space-y-16">
-            <div className="space-y-4">s
+            <div className="space-y-4">
               <h4 className="text-sm uppercase tracking-widest text-gray-400">Portfolio</h4>
               <h2 className="text-4xl font-light tracking-tight">Selected Works</h2>
               <p className="text-gray-300 max-w-xl text-lg">
-                A curated selection of compositions spanning ambient, electronic, jazz, and
+                Compositions spanning ambient, electronic, jazz, and
                 chamber music explorations.
               </p>
-              <p> MORE TO BE ADDED VERY SOON ... </p>
+              <p> </p>
             </div>
             
             {/* Tracks Grid */}
